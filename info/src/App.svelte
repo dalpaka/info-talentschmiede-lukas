@@ -3,6 +3,7 @@
 </script>
 
 <main>
+  <input type="tesxt" bind:value={input} />
   
 </main>
 

@@ -1,15 +1,12 @@
 import { HfInference } from '@huggingface/inference'
-import { writable } from 'svelte/store';
 
 const Hf = new HfInference("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")
-
-export let input = writable("");
 
 // Request the HuggingFace API for the response
 async function start() {
   const response = await Hf.textGenerationStream({
     model: 'gpt-neox-20b',
-    inputs: `${input}`,
+    inputs: `hello`,
     parameters: {
       max_new_tokens: 200,
       temperature: 0.5,
